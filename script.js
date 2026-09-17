@@ -1,56 +1,72 @@
 // diekopfsache — Slot-Logik & Interaktionen
+//
+// BUCHUNGSAUFBAU:
+// Stufe 1 (jetzt): Das Formular schickt echte Anfragen per E-Mail über
+//   Formspree. Setup (5 Min, gratis):
+//   1. Auf https://formspree.io registrieren → "New Form" anlegen
+//   2. Den Endpoint-Code unten bei FORM_ENDPOINT eintragen
+//   3. Einmal Test-Anfrage schicken und die Bestätigungs-Mail von
+//      Formspree bestätigen — fertig.
+// Verfügbarkeit (frei/belegt) wird manuell hier in WEEKS gepflegt und
+//   gepusht. Anfragen sind bewusst "unverbindlich", die feste Zusage
+//   kommt per E-Mail in 24h.
+// Stufe 2 (später, bei Volumen): Direktbuchung via Cal.com + Anzahlung
+//   via Stripe Payment Link.
+
+// TODO: echten Formspree-Endpoint eintragen, z.B. "https://formspree.io/f/xabc1234"
+const FORM_ENDPOINT = "https://formspree.io/f/DEIN-CODE";
 
 const WEEKS = {
   wien: {
     label: "Wien",
-    range: "12.–16. Jän",
-    note: "Wien · 12.–16. Jänner — noch 2 frei. Slots werden in Reihenfolge der Anfragen vergeben.",
-    topbar: "Nächster Stopp: WIEN · 12.–16. Jän · noch 2 von 5 Slots frei",
+    range: "12.–16. Okt",
+    note: "Wien · 12.–16. Oktober — noch 2 frei. Slots werden in Reihenfolge der Anfragen vergeben.",
+    topbar: "Nächster Stopp: WIEN · 12.–16. Okt · noch 2 von 5 Slots frei",
     days: [
-      { dow: "Montag", date: "12. Jän", firm: "Belegt", status: "belegt" },
-      { dow: "Dienstag", date: "13. Jän", firm: "Belegt", status: "belegt" },
-      { dow: "Mittwoch", date: "14. Jän", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
-      { dow: "Donnerstag", date: "15. Jän", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
-      { dow: "Freitag", date: "16. Jän", firm: "Belegt", status: "belegt" },
+      { dow: "Montag", date: "12. Okt", firm: "Belegt", status: "belegt" },
+      { dow: "Dienstag", date: "13. Okt", firm: "Belegt", status: "belegt" },
+      { dow: "Mittwoch", date: "14. Okt", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
+      { dow: "Donnerstag", date: "15. Okt", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
+      { dow: "Freitag", date: "16. Okt", firm: "Belegt", status: "belegt" },
     ],
   },
   graz: {
     label: "Graz",
-    range: "19.–23. Jän",
-    note: "Graz · 19.–23. Jänner — noch 3 frei.",
-    topbar: "GRAZ · 19.–23. Jän · noch 3 von 5 Slots frei",
+    range: "19.–23. Okt",
+    note: "Graz · 19.–23. Oktober — noch 3 frei.",
+    topbar: "GRAZ · 19.–23. Okt · noch 3 von 5 Slots frei",
     days: [
-      { dow: "Montag", date: "19. Jän", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
-      { dow: "Dienstag", date: "20. Jän", firm: "Belegt", status: "belegt" },
-      { dow: "Mittwoch", date: "21. Jän", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
-      { dow: "Donnerstag", date: "22. Jän", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
-      { dow: "Freitag", date: "23. Jän", firm: "Belegt", status: "belegt" },
+      { dow: "Montag", date: "19. Okt", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
+      { dow: "Dienstag", date: "20. Okt", firm: "Belegt", status: "belegt" },
+      { dow: "Mittwoch", date: "21. Okt", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
+      { dow: "Donnerstag", date: "22. Okt", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
+      { dow: "Freitag", date: "23. Okt", firm: "Belegt", status: "belegt" },
     ],
   },
   linz: {
     label: "Linz",
-    range: "26.–30. Jän",
-    note: "Linz · 26.–30. Jänner — frisch geöffnet, noch 4 frei.",
-    topbar: "LINZ · 26.–30. Jän · frisch geöffnet · 4 von 5 frei",
+    range: "02.–06. Nov",
+    note: "Linz · 02.–06. November — frisch geöffnet, noch 4 frei.",
+    topbar: "LINZ · 02.–06. Nov · frisch geöffnet · 4 von 5 frei",
     days: [
-      { dow: "Montag", date: "26. Jän", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
-      { dow: "Dienstag", date: "27. Jän", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
-      { dow: "Mittwoch", date: "28. Jän", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
-      { dow: "Donnerstag", date: "29. Jän", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
-      { dow: "Freitag", date: "30. Jän", firm: "Belegt", status: "belegt" },
+      { dow: "Montag", date: "02. Nov", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
+      { dow: "Dienstag", date: "03. Nov", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
+      { dow: "Mittwoch", date: "04. Nov", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
+      { dow: "Donnerstag", date: "05. Nov", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
+      { dow: "Freitag", date: "06. Nov", firm: "Belegt", status: "belegt" },
     ],
   },
   salzburg: {
     label: "Salzburg",
-    range: "02.–06. Feb",
-    note: "Salzburg · 02.–06. Februar — noch 2 frei.",
-    topbar: "SALZBURG · 02.–06. Feb · noch 2 von 5 Slots frei",
+    range: "09.–13. Nov",
+    note: "Salzburg · 09.–13. November — noch 2 frei.",
+    topbar: "SALZBURG · 09.–13. Nov · noch 2 von 5 Slots frei",
     days: [
-      { dow: "Montag", date: "02. Feb", firm: "Belegt", status: "belegt" },
-      { dow: "Dienstag", date: "03. Feb", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
-      { dow: "Mittwoch", date: "04. Feb", firm: "Belegt", status: "belegt" },
-      { dow: "Donnerstag", date: "05. Feb", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
-      { dow: "Freitag", date: "06. Feb", firm: "Belegt", status: "belegt" },
+      { dow: "Montag", date: "09. Nov", firm: "Belegt", status: "belegt" },
+      { dow: "Dienstag", date: "10. Nov", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
+      { dow: "Mittwoch", date: "11. Nov", firm: "Belegt", status: "belegt" },
+      { dow: "Donnerstag", date: "12. Nov", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
+      { dow: "Freitag", date: "13. Nov", firm: "Belegt", status: "belegt" },
     ],
   },
 };
@@ -135,29 +151,66 @@ function updateSummaryLight() {
   sumSlot.textContent = `${week.label} · ${formDay.value} · ${week.range}`;
 }
 
-// Buchungsformular
+// Buchungsformular — echte Anfrage per Formspree
 const form = document.getElementById("bookForm");
 const toast = document.getElementById("toast");
 const toastSub = document.getElementById("toastSub");
-form.addEventListener("submit", e => {
+
+let toastTimer = null;
+function showToast(main, sub, isError) {
+  toast.childNodes[0].textContent = main + " ";
+  toastSub.textContent = sub || "";
+  toast.classList.toggle("error", !!isError);
+  toast.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("show"), 6000);
+}
+
+form.addEventListener("submit", async e => {
   e.preventDefault();
   if (!form.checkValidity()) {
     form.reportValidity();
     return;
   }
-  const data = Object.fromEntries(new FormData(form).entries());
-  const count = parseInt(data.count || "0", 10);
+  // Honeypot: Bots füllen das versteckte Feld aus → still "erfolgreich" tun
+  if (form.querySelector('input[name="_gotcha"]').value) {
+    showToast("✓ Anfrage gesendet! Wir melden uns in 24h.", "");
+    return;
+  }
+  const data = new FormData(form);
+  const count = parseInt(data.get("count") || "0", 10);
+  data.append("Slot-Auswahl", sumSlot.textContent);
+  data.append("_subject", `Neue Slot-Anfrage: ${data.get("firma")} — ${sumSlot.textContent}`);
+
   const btn = document.getElementById("submitBtn");
   btn.textContent = "Wird gesendet …";
   btn.disabled = true;
-  setTimeout(() => {
+
+  if (FORM_ENDPOINT.includes("DEIN-CODE")) {
     btn.textContent = "Slot anfragen →";
     btn.disabled = false;
-    toastSub.textContent = `${data.firma} · ${sumSlot.textContent} · ca. ${data.count} Personen${count > 20 ? " (20+ Angebot)" : ""}`;
-    toast.classList.add("show");
+    showToast("✗ Noch nicht verbunden.", "Bitte direkt an hi@diekopfsache.at schreiben — das Formular wird gerade eingerichtet.", true);
+    return;
+  }
+
+  try {
+    const res = await fetch(FORM_ENDPOINT, {
+      method: "POST",
+      body: data,
+      headers: { Accept: "application/json" },
+    });
+    if (!res.ok) throw new Error("send failed");
+    showToast(
+      "✓ Anfrage gesendet! Wir melden uns in 24h.",
+      `${data.get("firma")} · ${sumSlot.textContent} · ca. ${data.get("count")} Personen${count > 20 ? " (größeres Team)" : ""}`
+    );
     form.reset();
-    setTimeout(() => toast.classList.remove("show"), 6000);
-  }, 900);
+  } catch {
+    showToast("✗ Senden fehlgeschlagen.", "Bitte direkt an hi@diekopfsache.at schreiben — wir melden uns in 24h.", true);
+  } finally {
+    btn.textContent = "Slot anfragen →";
+    btn.disabled = false;
+  }
 });
 
 // Mobile Menü
