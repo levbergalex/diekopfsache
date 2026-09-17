@@ -72,21 +72,22 @@ a{color:inherit;text-decoration:none}
 .hero-meta strong{font-family:var(--font-d);font-size:1.4rem;letter-spacing:-.02em}
 .hero-meta span{font-size:.82rem;color:var(--muted)}
 
-.hero-collage{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:.9rem;transform:rotate(1.5deg)}
-.photo{border-radius:18px;overflow:hidden;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.18);background:#ddd}
-.photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5;filter:saturate(1.05) contrast(1.03)}
-.p1{transform:rotate(-3deg)}
-.p2{transform:translateY(24px) rotate(2deg)}
-.p3{grid-column:1/-1;aspect-ratio:16/8}
-.p3 img{aspect-ratio:16/8}
-.photo .tag{position:absolute;left:.7rem;bottom:.7rem;background:rgba(10,10,10,.75);color:#fff;backdrop-filter:blur(6px);font-size:.72rem;font-weight:600;letter-spacing:.06em;padding:.35rem .7rem;border-radius:999px}
-.sticker{position:absolute;right:1rem;top:1rem;background:var(--lime);color:var(--ink);font-family:var(--font-d);font-weight:700;padding:.6rem 1rem;border-radius:999px;transform:rotate(8deg);box-shadow:0 8px 20px rgba(0,0,0,.25)}
-.slot-card-mini{position:absolute;left:-30px;bottom:-18px;background:var(--ink);color:var(--cream);border-radius:16px;padding:.9rem 1rem;min-width:250px;box-shadow:0 20px 50px rgba(0,0,0,.35);transform:rotate(-2deg)}
-.mini-head{font-size:.78rem;font-weight:600;display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem}
-.mini-slots{display:flex;gap:.4rem}
-.mini-slots span{font-family:var(--font-d);font-size:.75rem;font-weight:700;padding:.4rem .55rem;border-radius:8px;background:#2a2a27}
-.mini-slots .free{background:var(--lime);color:var(--ink)}
-.mini-foot{font-size:.72rem;opacity:.7;margin-top:.5rem}
+.hero-visual{position:relative;display:grid;gap:.9rem;transform:rotate(1deg)}
+.stops-card{background:var(--ink);color:var(--cream);border-radius:18px;padding:1.2rem 1.2rem .9rem;box-shadow:0 20px 60px rgba(0,0,0,.28);transform:rotate(-1deg)}
+.stops-head{font-size:.78rem;font-weight:600;display:flex;align-items:center;gap:.5rem;margin-bottom:.8rem;letter-spacing:.04em}
+.stops-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.65rem .8rem;border:1px solid var(--line-light);border-radius:12px;margin-bottom:.5rem;transition:.2s}
+.stops-row:hover{border-color:var(--lime);transform:translateX(3px)}
+.stops-row span{display:flex;align-items:baseline;gap:.7rem}
+.stops-row strong{font-family:var(--font-d);font-size:1rem}
+.stops-row small{font-size:.78rem;opacity:.6}
+.stops-row .pill{font-family:var(--font-d);font-style:normal;font-size:.72rem;font-weight:700;letter-spacing:.06em;background:var(--lime);color:var(--ink);padding:.35rem .75rem;border-radius:999px}
+.stops-foot{font-size:.74rem;opacity:.65;margin-top:.4rem;text-align:center}
+.hero-price-card{background:var(--lime);color:var(--ink);border-radius:18px;padding:1.1rem 1.3rem;box-shadow:0 20px 50px rgba(0,0,0,.2);transform:rotate(1.5deg);margin-left:2.5rem}
+.hero-price-top{font-family:var(--font-d);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
+.hero-price-amount{font-family:var(--font-d);font-size:3rem;font-weight:700;letter-spacing:-.05em;line-height:1}
+.hero-price-sub{font-size:.82rem;font-weight:500;opacity:.75;margin-top:.2rem}
+.hero-proof{display:flex;gap:.5rem;flex-wrap:wrap;margin-left:2.5rem}
+.hero-proof span{font-size:.74rem;font-weight:600;border:1px solid var(--line);padding:.35rem .75rem;border-radius:999px;background:rgba(255,255,255,.6)}
 .hero-brands{display:flex;gap:.8rem;justify-content:center;margin:3rem 0 1.2rem;font-family:var(--font-d);font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 
 /* TICKER */
@@ -248,8 +249,8 @@ footer{background:var(--cream);max-width:1320px;margin:0 auto;padding:3rem 2rem 
 
 @media(max-width:1020px){
   .hero-grid{grid-template-columns:1fr}
-  .hero-collage{max-width:560px}
-  .slot-card-mini{left:0}
+  .hero-visual{max-width:560px}
+  .hero-price-card,.hero-proof{margin-left:0}
   .bento{grid-template-columns:1fr 1fr}
   .card-big{grid-column:1/-1;grid-row:auto}
   .steps{grid-template-columns:1fr 1fr}
