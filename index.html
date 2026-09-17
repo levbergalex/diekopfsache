@@ -7,7 +7,7 @@
 <meta name="description" content="diekopfsache kommt für eine Woche in deine Stadt. 5 Slots, ein Fixpreis: Business Headshots für bis zu 20 Mitarbeiter für 750€. Direkt bei euch im Office." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%23FF4D00'/><text x='50' y='68' font-size='58' text-anchor='middle' font-family='sans-serif' font-weight='700' fill='white'>k.</text></svg>" />
 </head>
@@ -19,7 +19,7 @@
 <!-- TOP BAR -->
 <div class="topbar">
   <span class="pulse"></span>
-  <span id="topbar-text">Nächster Stopp: HAMBURG · 12.–16. Jan · noch 2 von 5 Slots frei</span>
+  <span id="topbar-text">Nächster Stopp: WIEN · 12.–16. Jän · noch 2 von 5 Slots frei</span>
   <a href="#slots">Slot sichern →</a>
 </div>
 
@@ -82,7 +82,7 @@
         <div class="photo p2"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop" alt="Business Portrait Frau" /><span class="tag">TEAM LEAD · Di 9:00</span></div>
         <div class="photo p3"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop" alt="Business Portrait" /><span class="sticker">750 € FIX</span></div>
         <div class="slot-card-mini">
-          <div class="mini-head"><span class="pulse"></span> Diese Woche · Berlin</div>
+          <div class="mini-head"><span class="pulse"></span> Diese Woche · Wien</div>
           <div class="mini-slots">
             <span class="taken">MO</span><span class="taken">DI</span><span class="free">MI</span><span class="free">DO</span><span class="taken">FR</span>
           </div>
@@ -228,17 +228,17 @@
   </div>
 
   <div class="city-picker" id="cityPicker">
-    <button class="city active" data-city="hamburg">Hamburg</button>
-    <button class="city" data-city="berlin">Berlin</button>
-    <button class="city" data-city="muenchen">München</button>
-    <button class="city" data-city="koeln">Köln</button>
+    <button class="city active" data-city="wien">Wien</button>
+    <button class="city" data-city="graz">Graz</button>
+    <button class="city" data-city="linz">Linz</button>
+    <button class="city" data-city="salzburg">Salzburg</button>
   </div>
 
   <div class="slots-grid" id="slotsGrid"><!-- via JS --></div>
 
   <div class="slots-note">
     <span class="pulse"></span>
-    <span id="slotsNote">Hamburg · 12.–16. Januar — noch 2 frei. Slots werden in Reihenfolge der Anfragen vergeben.</span>
+    <span id="slotsNote">Wien · 12.–16. Jänner — noch 2 frei. Slots werden in Reihenfolge der Anfragen vergeben.</span>
   </div>
 </section>
 
@@ -249,17 +249,12 @@
     <p class="split-p">Kein Bewerbungsfoto von 2009. Sondern Portraits, die nach euch aussehen — an eurem besten Tag. Drei Hintergründe zur Wahl: Fog (hell), Concrete (grau), Noir (dunkel).</p>
   </div>
   <div class="gallery">
-    <figure><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=700&auto=format&fit=crop" alt="Portrait" /><figcaption>FOG · Marketing Lead</figcaption></figure>
-    <figure class="tall"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=700&auto=format&fit=crop" alt="Portrait" /><figcaption>NOIR · Founder</figcaption></figure>
-    <figure><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=700&auto=format&fit=crop" alt="Portrait" /><figcaption>CONCRETE · Sales</figcaption></figure>
-    <figure><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=700&auto=format&fit=crop" alt="Portrait" /><figcaption>FOG · CTO</figcaption></figure>
-    <figure><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=700&auto=format&fit=crop" alt="Portrait" /><figcaption>NOIR · HR Lead</figcaption></figure>
-    <figure class="tall"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=700&auto=format&fit=crop" alt="Portrait" /><figcaption>CONCRETE · Product</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=700&auto=format&fit=crop" alt="Portrait" /><figcaption>FOG · hell</figcaption></figure>
+    <figure class="tall"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=700&auto=format&fit=crop" alt="Portrait" /><figcaption>NOIR · dunkel</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=700&auto=format&fit=crop" alt="Portrait" /><figcaption>CONCRETE · grau</figcaption></figure>
   </div>
-  <div class="reviews">
-    <div class="review">“Endlich sieht unsere Teamseite einheitlich aus. 18 Leute in 90 Minuten — krass entspannt.”<span>— Lena M., SaaS-Startup, Hamburg</span></div>
-    <div class="review">“37,50 € pro Kopf für Bilder, die sonst 200 € kosten. No-brainer.”<span>— Jonas K., Kanzlei, Berlin</span></div>
-    <div class="review">“Der Slot war in 2 Tagen weg. Verständlich — bucht früh.”<span>— Aylin D., Agentur, Köln</span></div>
+  <div class="reviews reviews-single">
+    <div class="review review-starter">diekopfsache startet gerade neu in Österreich — sichere dir einen der ersten Slots zum Fixpreis.<span>Zum Start: persönliche Betreuung, einheitlicher Look für dein Team, Lieferung in 48h.</span></div>
   </div>
 </section>
 
@@ -284,7 +279,7 @@
       <h2>Frag deinen Slot<br/><em>unverbindlich an.</em></h2>
       <p>Keine Zahlung jetzt. Wir bestätigen Verfügbarkeit innerhalb von 24h und halten deinen Wunsch-Tag 48h kostenlos für dich fest.</p>
       <div class="book-summary" id="bookSummary">
-        <div class="sum-row"><span>Auswahl</span><strong id="sumSlot">Hamburg · Mi, 14. Jan</strong></div>
+        <div class="sum-row"><span>Auswahl</span><strong id="sumSlot">Wien · Mi, 14. Jän</strong></div>
         <div class="sum-row"><span>Paket</span><strong>bis 20 Personen · 750 €</strong></div>
         <div class="sum-row total"><span>Gesamt</span><strong>750 € netto</strong></div>
       </div>
@@ -296,11 +291,11 @@
         <label>Ansprechpartner:in*<input name="name" required placeholder="Max Mustermann" /></label>
       </div>
       <div class="form-row">
-        <label>E-Mail*<input name="email" type="email" required placeholder="max@firma.de" /></label>
-        <label>Telefon<input name="phone" type="tel" placeholder="+49 …" /></label>
+        <label>E-Mail*<input name="email" type="email" required placeholder="max@firma.at" /></label>
+        <label>Telefon<input name="phone" type="tel" placeholder="+43 …" /></label>
       </div>
       <div class="form-row">
-        <label>Stadt*<select name="city" id="formCity"><option>Hamburg · 12.–16. Jan</option><option>Berlin · 19.–23. Jan</option><option>München · 26.–30. Jan</option><option>Köln · 02.–06. Feb</option></select></label>
+        <label>Stadt*<select name="city" id="formCity"><option>Wien · 12.–16. Jän</option><option>Graz · 19.–23. Jän</option><option>Linz · 26.–30. Jän</option><option>Salzburg · 02.–06. Feb</option></select></label>
         <label>Wunsch-Tag*<select name="day" id="formDay"><option>Montag</option><option>Dienstag</option><option selected>Mittwoch</option><option>Donnerstag</option><option>Freitag</option><option>Egal — erster freier Slot</option></select></label>
       </div>
       <label>Wie viele Personen? (ca.)<input name="count" type="number" min="1" max="100" value="15" /></label>
@@ -317,10 +312,10 @@
   <div class="foot-grid">
     <div><a href="#" class="logo">die<span>kopf</span>sache<span class="dot">.</span></a><p>Pop-Up Business Headshots.<br/>Eine Stadt. Eine Woche. Fünf Slots.</p></div>
     <div><h5>Menü</h5><a href="#konzept">Konzept</a><a href="#preise">Preise</a><a href="#slots">Slots</a><a href="#buchen">Buchen</a></div>
-    <div><h5>Kontakt</h5><a href="mailto:hi@diekopfsache.de">hi@diekopfsache.de</a><a href="tel:+494000000000">+49 40 000 000</a><span>Hamburg · Berlin · München · Köln</span></div>
+    <div><h5>Kontakt</h5><a href="mailto:hi@diekopfsache.at">hi@diekopfsache.at</a><a href="tel:+436600000000">+43 660 000 000</a><span>Wien · Graz · Linz · Salzburg</span></div>
     <div><h5>Rechtliches</h5><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a></div>
   </div>
-  <div class="foot-bottom"><span>© 2026 diekopfsache. Alle Köpfe bleiben eure.</span><span>Made with Licht in Deutschland.</span></div>
+  <div class="foot-bottom"><span>© 2026 diekopfsache. Alle Köpfe bleiben eure.</span><span>Made with Licht in Österreich.</span></div>
 </footer>
 
 <div class="toast" id="toast">✓ Anfrage gesendet! Wir melden uns in 24h. <small id="toastSub"></small></div>

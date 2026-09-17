@@ -1,62 +1,62 @@
 // diekopfsache — Slot-Logik & Interaktionen
 
 const WEEKS = {
-  hamburg: {
-    label: "Hamburg",
-    range: "12.–16. Januar",
-    note: "Hamburg · 12.–16. Januar — noch 2 frei. Slots werden in Reihenfolge der Anfragen vergeben.",
-    topbar: "Nächster Stopp: HAMBURG · 12.–16. Jan · noch 2 von 5 Slots frei",
+  wien: {
+    label: "Wien",
+    range: "12.–16. Jän",
+    note: "Wien · 12.–16. Jänner — noch 2 frei. Slots werden in Reihenfolge der Anfragen vergeben.",
+    topbar: "Nächster Stopp: WIEN · 12.–16. Jän · noch 2 von 5 Slots frei",
     days: [
-      { dow: "Montag", date: "12. Jan", firm: "SaaS-Startup · 18 Köpfe", status: "belegt" },
-      { dow: "Dienstag", date: "13. Jan", firm: "Kanzlei · 12 Köpfe", status: "belegt" },
-      { dow: "Mittwoch", date: "14. Jan", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
-      { dow: "Donnerstag", date: "15. Jan", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
-      { dow: "Freitag", date: "16. Jan", firm: "Agentur · 20 Köpfe", status: "belegt" },
+      { dow: "Montag", date: "12. Jän", firm: "Belegt", status: "belegt" },
+      { dow: "Dienstag", date: "13. Jän", firm: "Belegt", status: "belegt" },
+      { dow: "Mittwoch", date: "14. Jän", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
+      { dow: "Donnerstag", date: "15. Jän", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
+      { dow: "Freitag", date: "16. Jän", firm: "Belegt", status: "belegt" },
     ],
   },
-  berlin: {
-    label: "Berlin",
-    range: "19.–23. Januar",
-    note: "Berlin · 19.–23. Januar — noch 3 frei. Letzte Woche war in 6 Tagen ausgebucht.",
-    topbar: "BERLIN · 19.–23. Jan · noch 3 von 5 Slots frei",
+  graz: {
+    label: "Graz",
+    range: "19.–23. Jän",
+    note: "Graz · 19.–23. Jänner — noch 3 frei.",
+    topbar: "GRAZ · 19.–23. Jän · noch 3 von 5 Slots frei",
     days: [
-      { dow: "Montag", date: "19. Jan", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
-      { dow: "Dienstag", date: "20. Jan", firm: "Fintech · 16 Köpfe", status: "belegt" },
-      { dow: "Mittwoch", date: "21. Jan", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
-      { dow: "Donnerstag", date: "22. Jan", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
-      { dow: "Freitag", date: "23. Jan", firm: "Beratung · 14 Köpfe", status: "belegt" },
+      { dow: "Montag", date: "19. Jän", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
+      { dow: "Dienstag", date: "20. Jän", firm: "Belegt", status: "belegt" },
+      { dow: "Mittwoch", date: "21. Jän", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
+      { dow: "Donnerstag", date: "22. Jän", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
+      { dow: "Freitag", date: "23. Jän", firm: "Belegt", status: "belegt" },
     ],
   },
-  muenchen: {
-    label: "München",
-    range: "26.–30. Januar",
-    note: "München · 26.–30. Januar — frisch geöffnet, noch 4 frei.",
-    topbar: "MÜNCHEN · 26.–30. Jan · frisch geöffnet · 4 von 5 frei",
+  linz: {
+    label: "Linz",
+    range: "26.–30. Jän",
+    note: "Linz · 26.–30. Jänner — frisch geöffnet, noch 4 frei.",
+    topbar: "LINZ · 26.–30. Jän · frisch geöffnet · 4 von 5 frei",
     days: [
-      { dow: "Montag", date: "26. Jan", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
-      { dow: "Dienstag", date: "27. Jan", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
-      { dow: "Mittwoch", date: "28. Jan", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
-      { dow: "Donnerstag", date: "29. Jan", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
-      { dow: "Freitag", date: "30. Jan", firm: "Versicherung · 19 Köpfe", status: "belegt" },
+      { dow: "Montag", date: "26. Jän", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
+      { dow: "Dienstag", date: "27. Jän", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
+      { dow: "Mittwoch", date: "28. Jän", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
+      { dow: "Donnerstag", date: "29. Jän", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
+      { dow: "Freitag", date: "30. Jän", firm: "Belegt", status: "belegt" },
     ],
   },
-  koeln: {
-    label: "Köln",
-    range: "02.–06. Februar",
-    note: "Köln · 02.–06. Februar — Warteliste offen, noch 2 frei.",
-    topbar: "KÖLN · 02.–06. Feb · noch 2 von 5 Slots frei",
+  salzburg: {
+    label: "Salzburg",
+    range: "02.–06. Feb",
+    note: "Salzburg · 02.–06. Februar — noch 2 frei.",
+    topbar: "SALZBURG · 02.–06. Feb · noch 2 von 5 Slots frei",
     days: [
-      { dow: "Montag", date: "02. Feb", firm: "Medienhaus · 20 Köpfe", status: "belegt" },
+      { dow: "Montag", date: "02. Feb", firm: "Belegt", status: "belegt" },
       { dow: "Dienstag", date: "03. Feb", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
-      { dow: "Mittwoch", date: "04. Feb", firm: "E-Commerce · 17 Köpfe", status: "belegt" },
+      { dow: "Mittwoch", date: "04. Feb", firm: "Belegt", status: "belegt" },
       { dow: "Donnerstag", date: "05. Feb", firm: "Dein Unternehmen? · bis 20 Köpfe", status: "frei" },
-      { dow: "Freitag", date: "06. Feb", firm: "Steuerberatung · 11 Köpfe", status: "belegt" },
+      { dow: "Freitag", date: "06. Feb", firm: "Belegt", status: "belegt" },
     ],
   },
 };
 
-let currentCity = "hamburg";
-let selected = { city: "hamburg", index: 2 }; // default: Hamburg Mi
+let currentCity = "wien";
+let selected = { city: "wien", index: 2 }; // default: Wien Mi
 
 const grid = document.getElementById("slotsGrid");
 const note = document.getElementById("slotsNote");
@@ -124,14 +124,14 @@ document.querySelectorAll(".city").forEach(btn => {
 // Formular-Änderungen → Summary
 formCity.addEventListener("change", () => {
   const label = formCity.value.split(" ·")[0].toLowerCase();
-  const map = { hamburg: "hamburg", berlin: "berlin", münchen: "muenchen", köln: "koeln" };
-  const key = map[label] || "hamburg";
+  const map = { wien: "wien", graz: "graz", linz: "linz", salzburg: "salzburg" };
+  const key = map[label] || "wien";
   selected.city = key;
   updateSummaryLight();
 });
 formDay.addEventListener("change", updateSummaryLight);
 function updateSummaryLight() {
-  const week = WEEKS[selected.city] || WEEKS.hamburg;
+  const week = WEEKS[selected.city] || WEEKS.wien;
   sumSlot.textContent = `${week.label} · ${formDay.value} · ${week.range}`;
 }
 
