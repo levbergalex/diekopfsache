@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>diekopfsache — Pop-Up Business Headshots | Eine Stadt. Eine Woche. Fünf Slots.</title>
+<meta name="description" content="diekopfsache kommt für eine Woche in deine Stadt. 5 Slots, ein Fixpreis: Business Headshots für bis zu 20 Mitarbeiter für 750€. Direkt bei euch im Office." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%23FF4D00'/><text x='50' y='68' font-size='58' text-anchor='middle' font-family='sans-serif' font-weight='700' fill='white'>k.</text></svg>" />
+</head>
+<body>
+
+<div class="noise"></div>
+<div class="cursor" id="cursor"></div>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span class="pulse"></span>
+  <span id="topbar-text">Nächster Stopp: HAMBURG · 12.–16. Jan · noch 2 von 5 Slots frei</span>
+  <a href="#slots">Slot sichern →</a>
+</div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a href="#" class="logo">die<span>kopf</span>sache<span class="dot">.</span></a>
+  <nav class="nav-links">
+    <a href="#konzept">Konzept</a>
+    <a href="#ablauf">Ablauf</a>
+    <a href="#preise">Preise</a>
+    <a href="#slots">Slots</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <div class="nav-right">
+    <span class="nav-price">750 € fix</span>
+    <a href="#buchen" class="btn btn-small">Slot anfragen</a>
+    <button class="burger" id="burger" aria-label="Menü"><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#konzept">Konzept</a>
+  <a href="#ablauf">Ablauf</a>
+  <a href="#preise">Preise</a>
+  <a href="#slots">Slots</a>
+  <a href="#faq">FAQ</a>
+  <a href="#buchen" class="btn">Slot anfragen</a>
+</div>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="badge-row">
+        <span class="badge badge-live"><i></i> POP-UP FOTOSERVICE</span>
+        <span class="badge">NUR 5 SLOTS PRO STADT</span>
+      </div>
+      <h1>
+        Gute Köpfe<br/>
+        brauchen <em>gute Köpfe.</em><br/>
+        <span class="outline">Wir kommen zu euch.</span>
+      </h1>
+      <p class="lead">
+        diekopfsache ist eine Woche in deiner Stadt. Jeden Tag genau <strong>ein Slot</strong> für ein Unternehmen.
+        Business Headshots für bis zu <strong>20 Mitarbeiter:innen</strong> — direkt bei euch im Office, zum <strong>Fixpreis von 750&nbsp;€</strong>.
+      </p>
+      <div class="hero-cta">
+        <a href="#slots" class="btn btn-big">Freien Slot wählen <span>→</span></a>
+        <a href="#konzept" class="btn btn-ghost">So funktioniert's</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>750 €</strong><span>fix bis 20 Personen</span></div>
+        <div><strong>~2 Std.</strong><span>bei euch vor Ort</span></div>
+        <div><strong>48 h</strong><span>retuschierte Galerie</span></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-collage">
+        <div class="photo p1"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop" alt="Business Portrait Mann" /><span class="tag">CEO · Mo 9:00</span></div>
+        <div class="photo p2"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop" alt="Business Portrait Frau" /><span class="tag">TEAM LEAD · Di 9:00</span></div>
+        <div class="photo p3"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop" alt="Business Portrait" /><span class="sticker">750 € FIX</span></div>
+        <div class="slot-card-mini">
+          <div class="mini-head"><span class="pulse"></span> Diese Woche · Berlin</div>
+          <div class="mini-slots">
+            <span class="taken">MO</span><span class="taken">DI</span><span class="free">MI</span><span class="free">DO</span><span class="taken">FR</span>
+          </div>
+          <div class="mini-foot">2 Slots frei — first come, first serve</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-brands">
+    <span>LinkedIn-ready</span><span>·</span><span>Website-ready</span><span>·</span><span>Presse-ready</span><span>·</span><span>Ein Look fürs ganze Team</span>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker"><div class="ticker-inner" id="ticker">
+  <span>EINE STADT · EINE WOCHE · FÜNF SLOTS ·</span><span class="accent">750 € FIX BIS 20 KÖPFE ·</span><span>KEIN STUDIO-STRESS · WIR KOMMEN INS OFFICE ·</span><span class="accent">NUR 1 SLOT PRO TAG ·</span>
+  <span>EINE STADT · EINE WOCHE · FÜNF SLOTS ·</span><span class="accent">750 € FIX BIS 20 KÖPFE ·</span><span>KEIN STUDIO-STRESS · WIR KOMMEN INS OFFICE ·</span><span class="accent">NUR 1 SLOT PRO TAG ·</span>
+</div></div>
+
+<!-- KONZEPT -->
+<section class="section" id="konzept">
+  <div class="section-head">
+    <span class="kicker">01 — Das Prinzip</span>
+    <h2>Pop-Up statt <em>Fotostudio.</em></h2>
+    <p>Kein Anfahrts-Chaos, keine halben Teamfotos über Monate. Wir bauen unser mobiles Studio bei euch auf — und liefern in einem Termin einen einheitlichen Look für alle.</p>
+  </div>
+  <div class="bento">
+    <div class="card card-big">
+      <div class="card-num">5</div>
+      <h3>5 Slots pro Stadt-Woche.<br/>Nicht mehr.</h3>
+      <p>Montag bis Freitag gibt es jeden Tag genau einen Unternehmens-Slot. Wenn die Woche voll ist, ist sie voll. Das hält Qualität hoch — und Preise fix.</p>
+      <div class="week-visual">
+        <div class="day taken"><span>MO</span><small>gebucht</small></div>
+        <div class="day taken"><span>DI</span><small>gebucht</small></div>
+        <div class="day free pulse-day"><span>MI</span><small>frei</small></div>
+        <div class="day free"><span>DO</span><small>frei</small></div>
+        <div class="day taken"><span>FR</span><small>gebucht</small></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="icon">◐</div>
+      <h3>Mobiles Studio im Office</h3>
+      <p>Wir brauchen nur 3×3 m und eine Steckdose. Licht, Hintergrund & Coaching bringen wir mit.</p>
+    </div>
+    <div class="card">
+      <div class="icon">◎</div>
+      <h3>Ein Look für alle</h3>
+      <p>Gleiches Licht, gleicher Hintergrund, gleicher Crop. Endlich sieht eure Team-Seite aus wie ein Team.</p>
+    </div>
+    <div class="card">
+      <div class="icon">✦</div>
+      <h3>Fixpreis, null Überraschung</h3>
+      <p><strong>750 € netto</strong> für bis zu 20 Personen. Inkl. Aufbau, Shooting, Retusche & Galerie. Mehr als 20? Auf Anfrage.</p>
+    </div>
+    <div class="card">
+      <div class="icon">➤</div>
+      <h3>48h Lieferung</h3>
+      <p>Retuschierte Bilder als Web- + Print-Dateien, benannt pro Person. Fertig für LinkedIn, Website & Presse.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABLAUF -->
+<section class="section section-dark" id="ablauf">
+  <div class="section-head light">
+    <span class="kicker kicker-light">02 — Ablauf</span>
+    <h2>In 4 Schritten zu<br/><em>starken Köpfen.</em></h2>
+  </div>
+  <div class="steps">
+    <div class="step"><span class="step-n">01</span><h3>Slot wählen</h3><p>Stadt & Wochentag unten auswählen und unverbindlich anfragen. Bestätigung innerhalb von 24h.</p></div>
+    <div class="step"><span class="step-n">02</span><h3>15 Min Call</h3><p>Wir klären Look (hell/dunkel), Dresscode-Guide fürs Team & Platz bei euch.</p></div>
+    <div class="step"><span class="step-n">03</span><h3>Shoot-Day ~2h</h3><p>Wir bauen auf (30 Min), shooten bis zu 20 Personen à ca. 5 Min — entspannt gecoacht.</p></div>
+    <div class="step"><span class="step-n">04</span><h3>Galerie in 48h</h3><p>Ihr bekommt alle retuschierten Portraits + Team-Rechte für Web, Social & Print.</p></div>
+  </div>
+  <div class="included">
+    <div class="included-box">
+      <h4>Enthalten in 750 €</h4>
+      <ul>
+        <li>✓ Mobiles Studio bei euch (Licht, Hintergründe: hell / grau / dunkel)</li>
+        <li>✓ Bis zu 20 Personen, je 3–5 finale Motive zur Auswahl</li>
+        <li>✓ Professionelle Retusche (Haut, Zähne, Falten im Kleidungsbereich)</li>
+        <li>✓ Volle Nutzungsrechte für Website, LinkedIn, Presse & Pitchdecks</li>
+        <li>✓ Private Online-Galerie, benannt pro Mitarbeiter:in</li>
+      </ul>
+    </div>
+    <div class="included-box ghost-box">
+      <h4>Nicht enthalten / Extras</h4>
+      <ul>
+        <li>21+ Personen → individuelles Angebot auf Anfrage</li>
+        <li>Zweiter Hintergrund am selben Tag → +95 €</li>
+        <li>Express-Lieferung in 24h → +120 €</li>
+        <li>Make-up Artist auf Anfrage buchbar</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PREISE -->
+<section class="section" id="preise">
+  <div class="section-head center">
+    <span class="kicker">03 — Preise</span>
+    <h2>Ein Preis. <em>Keine Sternchen.</em></h2>
+  </div>
+  <div class="pricing-grid">
+    <div class="price-card featured">
+      <div class="price-flag">BELIEBT · 90% BUCHEN DAS</div>
+      <h3>Pop-Up Headshots</h3>
+      <div class="price"><span class="amount">750 €</span><span class="per">fix / netto</span></div>
+      <p class="price-sub">Bis zu 20 Mitarbeiter:innen · 1 Slot (ca. 2h) bei euch im Office</p>
+      <ul>
+        <li>✓ 1 von 5 Wochen-Slots (Mo–Fr)</li>
+        <li>✓ Alle retuschierten Bilder inklusive</li>
+        <li>✓ Lieferung in 48h</li>
+        <li>✓ Volle Nutzungsrechte</li>
+      </ul>
+      <a href="#slots" class="btn btn-big btn-dark">Slot wählen →</a>
+      <small>Das sind ab 37,50 € pro Kopf bei 20 Personen.</small>
+    </div>
+    <div class="price-card">
+      <h3>20+ Köpfe / Specials</h3>
+      <div class="price"><span class="amount">auf Anfrage</span></div>
+      <p class="price-sub">Größere Teams, mehrere Standorte, Halbtages- oder Zweit-Slot.</p>
+      <ul>
+        <li>✓ 21–60 Personen am selben Tag möglich</li>
+        <li>✓ Einheitlicher Look über Standorte</li>
+        <li>✓ Angebot in 24h</li>
+      </ul>
+      <a href="#buchen" class="btn btn-ghost">Anfrage senden</a>
+      <small>Schreib „20+“ ins Formular — wir melden uns.</small>
+    </div>
+  </div>
+  <div class="rechenbeispiel">
+    <span><strong>Rechenbeispiel:</strong> Klassisches Studio: 20 × 190 € = 3.800 € + Anfahrten + Abstimmung. <u>diekopfsache: 750 €. Fertig.</u></span>
+  </div>
+</section>
+
+<!-- SLOTS -->
+<section class="section section-dark" id="slots">
+  <div class="section-head light">
+    <span class="kicker kicker-light">04 — Slot-Kalender</span>
+    <h2>Wähl deine Woche.<br/><em>Schnapp dir deinen Tag.</em></h2>
+    <p>Jede Stadt hat genau 5 Slots pro Woche — ein Unternehmen pro Tag. Aktuell buchbar:</p>
+  </div>
+
+  <div class="city-picker" id="cityPicker">
+    <button class="city active" data-city="hamburg">Hamburg</button>
+    <button class="city" data-city="berlin">Berlin</button>
+    <button class="city" data-city="muenchen">München</button>
+    <button class="city" data-city="koeln">Köln</button>
+  </div>
+
+  <div class="slots-grid" id="slotsGrid"><!-- via JS --></div>
+
+  <div class="slots-note">
+    <span class="pulse"></span>
+    <span id="slotsNote">Hamburg · 12.–16. Januar — noch 2 frei. Slots werden in Reihenfolge der Anfragen vergeben.</span>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section class="section" id="arbeit">
+  <div class="section-head split">
+    <div><span class="kicker">05 — Der Look</span><h2>Echt. Kompetent.<br/><em>Nicht steif.</em></h2></div>
+    <p class="split-p">Kein Bewerbungsfoto von 2009. Sondern Portraits, die nach euch aussehen — an eurem besten Tag. Drei Hintergründe zur Wahl: Fog (hell), Concrete (grau), Noir (dunkel).</p>
+  </div>
+  <div class="gallery">
+    <figure><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=700&auto=format&fit=crop" alt="Portrait" /><figcaption>FOG · Marketing Lead</figcaption></figure>
+    <figure class="tall"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=700&auto=format&fit=crop" alt="Portrait" /><figcaption>NOIR · Founder</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=700&auto=format&fit=crop" alt="Portrait" /><figcaption>CONCRETE · Sales</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=700&auto=format&fit=crop" alt="Portrait" /><figcaption>FOG · CTO</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=700&auto=format&fit=crop" alt="Portrait" /><figcaption>NOIR · HR Lead</figcaption></figure>
+    <figure class="tall"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=700&auto=format&fit=crop" alt="Portrait" /><figcaption>CONCRETE · Product</figcaption></figure>
+  </div>
+  <div class="reviews">
+    <div class="review">“Endlich sieht unsere Teamseite einheitlich aus. 18 Leute in 90 Minuten — krass entspannt.”<span>— Lena M., SaaS-Startup, Hamburg</span></div>
+    <div class="review">“37,50 € pro Kopf für Bilder, die sonst 200 € kosten. No-brainer.”<span>— Jonas K., Kanzlei, Berlin</span></div>
+    <div class="review">“Der Slot war in 2 Tagen weg. Verständlich — bucht früh.”<span>— Aylin D., Agentur, Köln</span></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-faq" id="faq">
+  <div class="section-head"><span class="kicker">06 — FAQ</span><h2>Kurze Antworten.</h2></div>
+  <div class="faq" id="faqList">
+    <details open><summary>Was passiert, wenn meine Wunsch-Stadtwoche voll ist?</summary><p>Du kommst auf die Warteliste für diese Woche (kostenlos, unverbindlich) und bekommst zuerst Bescheid, wenn ein Slot frei wird oder die nächste Woche in deiner Stadt feststeht. Alternativ sichern wir dir direkt einen Slot in der Folgewoche.</p></details>
+    <details><summary>Wie viel Platz braucht ihr bei uns?</summary><p>Ca. 3×3 Meter, eine Steckdose und Tageslicht ist nett, aber kein Muss — wir bringen Profi-Licht mit. Meetingraum oder ruhige Ecke reicht völlig.</p></details>
+    <details><summary>Wie lange dauert das Shooting für 20 Personen?</summary><p>Ca. 90–120 Minuten reine Shootingzeit (ca. 5 Min pro Person inkl. Wechsel) plus 30 Minuten Auf- und Abbau. Die meisten Teams sind in einer Vormittags- oder Nachmittagsschicht durch.</p></details>
+    <details><summary>Was kostet es bei mehr als 20 Personen?</summary><p>Schreib uns einfach — bis ca. 40 Personen schaffen wir meist am selben Tag mit etwas mehr Zeit, darüber bieten wir einen zweiten Slot oder Folgetag an. Du bekommst in 24h ein Festpreis-Angebot.</p></details>
+    <details><summary>Bekommen wir die Nutzungsrechte?</summary><p>Ja. Alle retuschierten Bilder dürft ihr zeitlich und räumlich unbegrenzt nutzen: Website, LinkedIn, Presse, Pitchdecks, Stellenanzeigen. Nur Weiterverkauf an Dritte ist ausgeschlossen.</p></details>
+    <details><summary>Wie zahlen wir?</summary><p>50% Anzahlung bei Slot-Bestätigung, Rest nach Lieferung. Rechnung mit USt., Zahlung per Überweisung. Storno bis 14 Tage vorher kostenlos.</p></details>
+  </div>
+</section>
+
+<!-- BUCHUNG -->
+<section class="section section-book" id="buchen">
+  <div class="book-grid">
+    <div class="book-left">
+      <span class="kicker kicker-light">07 — Buchung</span>
+      <h2>Frag deinen Slot<br/><em>unverbindlich an.</em></h2>
+      <p>Keine Zahlung jetzt. Wir bestätigen Verfügbarkeit innerhalb von 24h und halten deinen Wunsch-Tag 48h kostenlos für dich fest.</p>
+      <div class="book-summary" id="bookSummary">
+        <div class="sum-row"><span>Auswahl</span><strong id="sumSlot">Hamburg · Mi, 14. Jan</strong></div>
+        <div class="sum-row"><span>Paket</span><strong>bis 20 Personen · 750 €</strong></div>
+        <div class="sum-row total"><span>Gesamt</span><strong>750 € netto</strong></div>
+      </div>
+      <div class="trust"><span>✓ Antwort in 24h</span><span>✓ 48h Reservierung</span><span>✓ Kostenlos stornierbar (14 Tage)</span></div>
+    </div>
+    <form class="book-form" id="bookForm" novalidate>
+      <div class="form-row">
+        <label>Firma*<input name="firma" required placeholder="Muster GmbH" /></label>
+        <label>Ansprechpartner:in*<input name="name" required placeholder="Max Mustermann" /></label>
+      </div>
+      <div class="form-row">
+        <label>E-Mail*<input name="email" type="email" required placeholder="max@firma.de" /></label>
+        <label>Telefon<input name="phone" type="tel" placeholder="+49 …" /></label>
+      </div>
+      <div class="form-row">
+        <label>Stadt*<select name="city" id="formCity"><option>Hamburg · 12.–16. Jan</option><option>Berlin · 19.–23. Jan</option><option>München · 26.–30. Jan</option><option>Köln · 02.–06. Feb</option></select></label>
+        <label>Wunsch-Tag*<select name="day" id="formDay"><option>Montag</option><option>Dienstag</option><option selected>Mittwoch</option><option>Donnerstag</option><option>Freitag</option><option>Egal — erster freier Slot</option></select></label>
+      </div>
+      <label>Wie viele Personen? (ca.)<input name="count" type="number" min="1" max="100" value="15" /></label>
+      <label>Nachricht<textarea name="msg" rows="3" placeholder="z.B. 22 Personen, 2. Hintergrund gewünscht, knapper Zeitplan …"></textarea></label>
+      <label class="check"><input type="checkbox" required /> Ich habe verstanden, dass pro Stadt-Woche nur 5 Slots vergeben werden. <span>*</span></label>
+      <button type="submit" class="btn btn-big btn-accent" id="submitBtn">Slot anfragen →</button>
+      <p class="form-note" id="formNote">Unverbindlich · keine Zahlung erforderlich</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div><a href="#" class="logo">die<span>kopf</span>sache<span class="dot">.</span></a><p>Pop-Up Business Headshots.<br/>Eine Stadt. Eine Woche. Fünf Slots.</p></div>
+    <div><h5>Menü</h5><a href="#konzept">Konzept</a><a href="#preise">Preise</a><a href="#slots">Slots</a><a href="#buchen">Buchen</a></div>
+    <div><h5>Kontakt</h5><a href="mailto:hi@diekopfsache.de">hi@diekopfsache.de</a><a href="tel:+494000000000">+49 40 000 000</a><span>Hamburg · Berlin · München · Köln</span></div>
+    <div><h5>Rechtliches</h5><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a></div>
+  </div>
+  <div class="foot-bottom"><span>© 2026 diekopfsache. Alle Köpfe bleiben eure.</span><span>Made with Licht in Deutschland.</span></div>
+</footer>
+
+<div class="toast" id="toast">✓ Anfrage gesendet! Wir melden uns in 24h. <small id="toastSub"></small></div>
+
+<script src="script.js"></script>
+</body>
+</html>
